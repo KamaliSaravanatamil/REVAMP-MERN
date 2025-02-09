@@ -50,6 +50,7 @@ function greetUser(name) {
 }
 
 // Calling the function with a sample name
+
 let message = greetUser("Alice");
 
 // Displaying the result
