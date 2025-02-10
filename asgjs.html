@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat and Bulb Toggle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black flex flex-col items-center justify-center min-h-screen text-white">
+
+    <!-- Light Bulb -->
+    <div class="mb-6">
+        <img id="bulb" src="https://ik.imagekit.io/4z8covdo9/Full%20stack/bulb-go-on-img.png" alt="Bulb" class="w-20">
+    </div>
+
+    <!-- Cat Image -->
+    <div class="mb-4">
+        <img id="cat" src="https://ik.imagekit.io/4z8covdo9/Full%20stack/cat-img.png" alt="Happy Cat" class="w-32">
+    </div>
+
+    <!-- Status Text -->
+    <h2 id="statusText" class="text-xl font-bold mb-4">Switched On</h2>
+
+    <!-- Buttons -->
+    <div class="flex space-x-4">
+        <button id="onBtn" class="px-4 py-2 bg-green-600 text-white rounded-lg">On</button>
+        <button id="offBtn" class="px-4 py-2 bg-gray-500 text-white rounded-lg">Off</button>
+    </div>
+
+    <script>
+        const statusText = document.getElementById("statusText");
+        const onBtn = document.getElementById("onBtn");
+        const offBtn = document.getElementById("offBtn");
+        const bulb = document.getElementById("bulb");
+        const cat = document.getElementById("cat");
+
+        // Images for different states
+        const bulbOnImg = "https://ik.imagekit.io/4z8covdo9/Full%20stack/bulb-go-on-img.png";
+        const bulbOffImg = "https://ik.imagekit.io/4z8covdo9/Full%20stack/bulb-go-off-img.png";
+        const catHappyImg = "https://ik.imagekit.io/4z8covdo9/Full%20stack/cat-img.png";
+        const catSadImg = "https://ik.imagekit.io/4z8covdo9/Full%20stack/cat-eyes-img.png"; // Replace with a real sad cat image
+
+        onBtn.addEventListener("click", function() {
+            statusText.innerText = "Switched On";
+            bulb.src = bulbOnImg;
+            cat.src = catHappyImg;
+            onBtn.classList.replace("bg-gray-500", "bg-green-600");
+            offBtn.classList.replace("bg-red-600", "bg-gray-500");
+        });
+
+        offBtn.addEventListener("click", function() {
+            statusText.innerText = "Switched Off";
+            bulb.src = bulbOffImg;
+            cat.src = catSadImg;
+            offBtn.classList.replace("bg-gray-500", "bg-red-600");
+            onBtn.classList.replace("bg-green-600", "bg-gray-500");
+        });
+    </script>
+
+</body>
+</html>
